@@ -4,7 +4,8 @@ header{
     font-size:x-large;
 }
 body{
-    background-color: rgb(20, 150, 150);
+    /* background-color: rgb(20, 150, 150); */
+    background: linear-gradient(115deg, rgb(250, 178, 255), rgb(25, 4, 229));
 }
 .quiz-sec{
     background-color: rgb(216, 226, 235);
