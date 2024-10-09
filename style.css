@@ -1,54 +1,100 @@
-header{
+header {
     padding-top: 20px;
     text-align: center;
-    font-size:x-large;
+    font-size: x-large;
 }
-body{
+
+body {
     /* background-color: rgb(20, 150, 150); */
     background: linear-gradient(115deg, rgb(250, 178, 255), rgb(25, 4, 229));
 }
-.quiz-sec{
+
+.quiz-sec {
     background-color: rgb(216, 226, 235);
-    margin-top: 40px;
-    margin-left: 450px;
-    height: 500px;
-    width: 40%;
+    margin: 40px auto; /* Centering the quiz section */
+    height: auto; /* Allowing height to adjust based on content */
+    width: 90%; /* Making it responsive */
+    max-width: 600px; /* Setting a max width */
+    padding: 20px; /* Adding padding for better spacing */
 }
-.question{
+
+.question {
     padding-top: 10px;
     padding: 20px;
 }
-ol{
-    list-style: upper-alpha;
-        padding: 30px;
-        padding-top: 1px;
-        padding-left: 50px;
-}
-#option-1{
 
-    /* margin: 200px; */
+ol {
+    list-style: upper-alpha;
+    padding: 30px;
+    padding-top: 1px;
+    padding-left: 50px;
 }
-li{
-    margin-top:20px;
+
+li {
+    margin-top: 20px;
     border: 2px solid rgb(177, 171, 171);
-    width: 250px;
     border-radius: 20px;
     padding: 12px;
 }
-button{
+
+button {
     text-align: center;
     background-color: blueviolet;
     color: #ffffffd9;
     border-radius: 12px;
-    width: 87px;
+    width: 100%; /* Making button full-width for small screens */
+    max-width: 200px; /* Limiting button size */
     font-weight: bold;
     height: 35px;
     margin-top: 8px;
-    margin-left: 260px;
-    h
+    margin: 8px auto; /* Centering the button */
+    display: block; /* Ensuring button is a block element */
 }
-button:hover{
+
+button:hover {
     cursor: pointer;
-    color:yellow;
-    background-color:green;
+    color: yellow;
+    background-color: green;
+}
+
+.score {
+    /* color: #4c9c22; */
+    /* font-size: 19px; */
+    /* font-weight: bolder; */
+    /* margin-left: 338px; */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .quiz-sec {
+        width: 95%; /* Make it wider on smaller screens */
+        margin-left: 10px; /* Resetting margin for smaller screens */
+        margin-right: 10px; /* Resetting margin for smaller screens */
+    }
+
+    ol {
+        padding-left: 20px; /* Adjust padding for smaller screens */
+    }
+
+    li {
+        width: 100%; /* Make list items full width */
+    }
+
+    button {
+        width: 90%; /* Adjust button width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: large; /* Adjust font size for mobile */
+    }
+
+    li {
+        font-size: small; /* Adjust font size for list items */
+    }
+
+    button {
+        font-size: small; /* Adjust font size for button */
+    }
 }

@@ -104,6 +104,7 @@ const quizTemp = [
 const quiz=document.querySelector("#quiz");
 const getAnswer = document.querySelectorAll(".answer");
 const getQuestion = document.querySelector("#question");
+const scores = document.querySelector(".score");
 
 // const[getQuestion,option_1,option_2,option_3,option_4]=
 // document.querySelectorAll("#question,#option-1,#option-2,#option-3,#option-4");
@@ -119,6 +120,8 @@ const loadQuiz = () => {
     getQuestion.innerText = `${currQuiz+1}: ${question}`;
     // console.log(options);
     // window[`option_1`].innerText = options[0];
+
+    scores.innerHTML=`Score: ${score}/${quizTemp.length}`;
     options.forEach(
         // (curOption,index)=>(window[`option-${index + 1}`].innerText = curOption)
         (curOption, index) => (document.getElementById(`option-${index + 1}`).innerText = curOption)
@@ -132,6 +135,8 @@ const getSelectedOption = () => {
     getAnswer.forEach((curOption, index) => {
         if (curOption.checked)
             ans = index;
+
+        // document.write(score);
     });
     return ans;
 };
@@ -150,7 +155,12 @@ submitBtn.addEventListener("click", () => {
     if(selectedOption == quizTemp[currQuiz].correct)
         score+=1;  
 
+    // let scores=${score}/${quizTemp.length};
+    // document.write(scores);
+    
+    // alert(score);
     currQuiz++;
+
 
     if(currQuiz<quizTemp.length)
     {
@@ -160,8 +170,8 @@ submitBtn.addEventListener("click", () => {
     else{
         quiz.innerHTML=`
         <div class="result">
-        <h2> 🏆Your Score 🏆: ${score}/${quizTemp.lenght} Correct Answers</h2>
-        <p> Congratutaions on completing th quiz! 🎊🎊 </p>
+        <h2> 🏆Your Score 🏆: ${score}/${quizTemp.length} Correct Answers</h2>
+        <p> Congratutaions on completing the quiz! 🎊🎊 </p>
         <button class="reload button" onclick="location.reload()">Play Again 🔁</button>
         </div>
         `;
